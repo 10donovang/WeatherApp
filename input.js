@@ -16,21 +16,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/src/index.js'));
 });
 
-
-
-
-// app.get('/', (req, res) => {
-//    request(
-//    url,
-//    function(error,response,body){
-//     if(!error && response.statusCode == 200)
-//     {
-//       res.send(body);
-//     }
-//    }
-//     );
-// });
-
 app.post('/weather', (req, res) => {
     var lat = req.body.lat;
     var lon = req.body.lon;
@@ -63,15 +48,9 @@ app.post('/weather', (req, res) => {
             mode: mode
         };
       res.send(JSON.stringify(weather));
-      //res.send("test");
     });
     
 });
-
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/src/index.js'));
-// });
 
 
 
